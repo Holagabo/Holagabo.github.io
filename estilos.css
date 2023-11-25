@@ -1,0 +1,254 @@
+/*Estilos generales*/
+*{
+    box-sizing:border-box;/*Ayuda a controlar el tamaño de los elemntos*/
+    margin: 0;/*Quitar margenes predeterminados*/
+    padding: 0; /*Quitar separaciones predeterminadas*/
+  }
+body{
+    background-color: cadetblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    color:aliceblue;
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 3%;
+}
+h2{
+    color: aliceblue;
+    font-size: 2em;
+}
+p{font-size: 1.5;
+color: white;
+}
+
+/*Diseño de elementos*/
+/*Diseño de menu de navegación*/
+.header a{
+    text-decoration: none;/*Quitar decoración de enlace*/
+    font-weight: bold;/*Negrita*/
+    color: #fff;/*Color de letra*/
+    padding: 5px;
+}
+.header a:hover{
+    color: grey;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 5px;
+}
+
+.header .cont_cab{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contenedor .header{
+    position: fixed;
+    width: 85%;
+    height: 9%;
+}
+
+/*Diseño del logo*/
+.header .logo{
+    margin: 0;
+    padding: 0px 5px;
+    color:rgb(184, 225, 225);
+    font-size: 1.7em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/*Diseño del pie de página*/
+.footer .cont_foot{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.face:hover{
+    filter: brightness(60%);
+}
+.img_social{
+    filter: invert(100%);
+    padding:5px;
+}
+.footer #copy{
+    color: aliceblue;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/*****Diseño del contenido de página*****/
+/**Diseño de sección principal**/
+/*Curos de guitarra*/
+.section h2{
+    font-weight: bold;/*Titulo en negrita*/
+    font-style: italic;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.article{
+    padding: 20px;
+}
+.cont_curso{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #fff;
+    padding: 1px;
+}
+
+.cont_curso img{
+    width: 30%;
+    height: 25%;
+    margin: auto;
+}
+
+/*Diseño eventos*/
+.eventos img{
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+}
+
+/*Diseño de anuncios*/
+.promos img{
+    height: 20%;
+    width: 23%;
+    margin: auto;
+    filter: brightness(50%);
+}
+
+.promos img:hover{
+    filter: brightness(100%);
+    transition: 0.2s;
+    transform: scale(1.4);
+}
+
+.promos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;/*Ancho del contenedor*/
+    /*margen de arriba y abajo / margenes de los costados*/
+    margin: 0 auto;/*Centra el contenedor*/
+    
+}
+
+/*Diseño de plantilla*/
+.header{
+    grid-area: header;
+    /*background-color: #fff;*/
+}
+
+.section{
+    grid-area: section;
+    /*background-color: antiquewhite;*/
+}
+
+.aside{
+    grid-area: aside;
+    /*background-color: aqua;*/
+}
+
+.anuncios{
+    grid-area: anuncios;
+    /*background-color: aquamarine;*/
+}
+
+.footer{
+    grid-area: footer;
+    /*background-color: azure;*/
+}
+
+.contenedor{
+    background-color: #fff;
+    /*Distribución de la plantilla*/
+    display: grid;
+    gap: 5px;
+    grid-template: 
+    "header header" 5%
+    "section aside"
+    "anuncios anuncios"
+    "footer footer"/
+    70% auto; 
+
+    width: 85%;/*Ancho del contenedor*/
+    /*margen de arriba y abajo / margenes de los costados*/
+    margin: 0 auto;/*Centra el contenedor*/
+    padding: 0;
+}
+
+.header, .section, .aside, .anuncios, .footer{
+    background-color:black;
+    padding: 20px;
+}
+
+.header, .footer{
+    background-color: darkslategrey;
+}
+
+@media(max-width: 750px) {
+
+    p{
+        font-size: 1.2em;
+    }
+    .contenedor{
+        display: grid;
+        gap: 5px;
+        grid-template: 
+        "header" 4%
+        "section"
+        "aside"
+        "anuncios"
+        "footer" 10%; 
+
+        width: 95%
+    }
+
+    .cont_curso{
+        display: flex;
+        flex-direction: column;
+    }
+    .cont_curso img{
+        width: 80%;
+        /*height: 25%;*/
+        margin: 10px auto;
+        margin-top: 2px;
+    }
+
+    .promos{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .promos img{
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .contenedor .header{
+        height: auto;
+        width: auto;
+        position:static;
+    }
+
+    .footer{
+        height: 30%;
+    }
+
+    .header .cont_cab{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+    }
+
+    .nav{
+        display: flex;
+        flex-direction: column;
+    }
+}
